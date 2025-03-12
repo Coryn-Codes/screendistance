@@ -117,58 +117,10 @@ function displayImageDetections(detections, resultElement){
     h1.innerHTML = "display image detections running"
     const context = canvas.getContext('2d');
 
-    point(0, 0, context, 10);
-
 
     for (let detection of detections.detections){
-        /*
-        const p = document.createElement('p');
-        p.setAttribute("class", "info");
-        p.innerText = 
-            "Confidence: " +
-            Math.round(parseFloat(detection.categories[0].score) * 100) +
-            "% .";
-        p.style =
-            "left: " +
-            detection.boundingBox.originX * ratio +
-            "px;" +
-            "top: " +
-            (detection.boundingBox.originY * ratio - 30) +
-            "px; " +
-            "width: " +
-            (detection.boundingBox.width * ratio - 10) +
-            "px;" +
-            "hight: " +
-            20 +
-            "px;";
-        const highlighter = document.createElement("div");
-        highlighter.setAttribute("class", "highlighter");
-        highlighter.style = 
-            "left: " +
-            detection.boundingBox.originX * ratio +
-            "px;" +
-            "top: " +
-            detection.boundingBox.originY * ratio +
-            "px;" +
-            "width: " +
-            detection.boundingBox.width * ratio +
-            "px;" +
-            "height: " +
-            detection.boundingBox.height * ratio +
-            "px;";
-        
-        resultElement.appendChild(highlighter);
-        resultElement.appendChild(p);
-        */
+
         for (let keypoint of detection.keypoints) {
-            /*
-            const keypointEl = document.createElement("span");
-            keypointEl.className = "key-point";
-            keypointEl.style.top = `${keypoint.y * resultElement.height - 3}px`;
-            keypointEl.style.left = `${keypoint.x * resultElement.width - 3}px`;
-            resultElement.appendChild(keypointEl);
-            */
-            // redo: draw directly on the canvas
 
             let x = canvas.width * keypoint.x;
             let y = canvas.height * keypoint.y;
@@ -179,21 +131,3 @@ function displayImageDetections(detections, resultElement){
 }
 
 
-//ref: https://www.jsdelivr.com/package/npm/@mediapipe/tasks-vision
-//import * as mediapipetasksVision from 'https://esm.run/@mediapipe/tasks-vision';
-//console.log(mediapipetasksVision);
-/*
-async function async_function(){
-    const vision = await FilesetResolver.forVisionTasks(
-        "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/wasm"
-    );
-    const poseLandmarker = await PoseLandmarker.createFromModelPath(vision,
-        "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task"
-    );
-
-
-    // const image = document.getElementById("image") as HTMLImageElement;
-    // const landmarks = poseLandmarker.detect(image);
-}
-
-*/
