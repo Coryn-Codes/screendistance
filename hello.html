@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <link rel="stylesheet" href="css.css">
+        <script src="hello.js" type="module"></script>
+        <!--<script src="capture.js" type="module"></script>-->
+        <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js"
+        crossorigin="anonymous" type="module"></script>
+<!--        <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/dist/vision_bundle.js"></script>
+    -->
+<!--
+
+    <script>
+        // Example: Use the library after it's loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Script loaded!');
+            // You can now use the library's functionality here.
+            // For example, if the library exposes a global object:
+            // const genAI = new GenAI();
+        });
+
+    </script>
+-->
+        
+    </head>
+    <body onload="">
+        
+        <h1 id="header_id">hello world</h1>
+        <img id="meow_id" src="meows.png"><br><br>
+        <!--
+        <button id="button_1_id">this is a button</button><br>
+        <button id="button_2_id">this is another button</button><br><br>
+        --> 
+        <div id="image_div_id" style="display: none;">
+            <img id="photo_image_id"  alt="Captured Photo (this is alt text)">
+        </div>
+        <canvas id="photo_canvas_id" ></canvas> <!--style="display: none;"-->
+        <button id="capture_button_id">Capture Photo</button>
+        <button id="detect_button_id">Detect!</button>
+        <video id="camera_preview_id" autoplay></video>
+        
+        
+
+        <br>
+        <lb></lb>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,17 @@
+#meow_id{
+    display: block;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+.key-point {
+    position: absolute;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000;
+    /* border: 1px solid #ffffff; */
+    border-radius: 50%;
+    display: block;
+  }
