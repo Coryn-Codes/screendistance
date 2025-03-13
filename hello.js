@@ -1,5 +1,5 @@
 // python -m http.server 8000
-// http://localhost:8000/hello.html
+// http://localhost:8000/
 // ref: https://codepen.io/mediapipe-preview/pen/OJByWQr?editors=1010
 // ctrl+F5 is clear cache refresh (just F5 doesnt do that)
 
