@@ -15,3 +15,89 @@
     border-radius: 50%;
     display: block;
   }
+
+
+  
+  /* CSS */
+  .button-10 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    margin: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+  
+    color: #fff;
+    background: linear-gradient(180deg, #3a75cc 0%, #2d5eb9 100%);
+     background-origin: border-box;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-10:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+  }
+#mode_header_id {
+    background: linear-gradient(to right, #5170aa, #2a5298); /* Blue gradient */
+    color: white; /* Text color */
+    padding: 20px; /* Padding inside the box */
+    text-align: center; /* Center the text */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 24px; /* Font size */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    display: inline-block; /* Adjust width to content */
+    margin: 20px; /* Margin around the box */
+}
+
+
+.container {
+    margin: 10px;
+    display: flex;
+    flex-direction: column; /* Stack canvas and video vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically (optional) */
+    gap: 20px; /* Space between canvas and video */
+    width: 100%; /* Full width of the parent */
+    height: 100vh; /* Full viewport height (optional) */
+    /*background-color: #f0f0f0; /* Optional: Background color for the container */
+}
+
+canvas, video {
+    max-width: 100%; /* Ensure they don't overflow the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.verdict-red {
+    margin: 10px;
+    background-color: #ffcccc; /* Pale red */
+    color: #cc0000; /* Darker red text */
+}
+
+.verdict-green {
+    margin: 10px;
+    background-color: #ccffcc; /* Pale green */
+    color: #006600; /* Darker green text */
+}
+
+.verdict-grey {
+    margin: 10px;
+    background-color: #f0f0f0; /* Light grey */
+    color: #999999; /* Light grey text */
+    font-style: italic; /* Italic placeholder text */
+}
+
+#verdict_header_id {
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    margin: 20px auto;
+    /*display: none; /* Hidden by default */
+}

@@ -26,20 +26,24 @@
     </head>
     <body onload="">
         
-        <h1 id="header_id">hello world</h1>
-        <img id="meow_id" src="meows.png"><br><br>
-        <!--
-        <button id="button_1_id">this is a button</button><br>
-        <button id="button_2_id">this is another button</button><br><br>
-        --> 
+        <h1 id="header_id" style="display:none;">hello world</h1>
+        <h1 id="mode_header_id">Calibration mode - please take 3 more photos of yourself at a safe distance from the screen!</h1>
+        <h1 id="verdict_header_id" class="verdict-grey">Awaiting detection...</h1>
+        <!--<img id="meow_id" src="meows.png"><br><br>-->
+
+        <button id="detect_button_id" class="button-10">Detect!</button>
+        <br>
         <div id="image_div_id" style="display: none;">
             <img id="photo_image_id"  alt="Captured Photo (this is alt text)">
         </div>
-        <canvas id="photo_canvas_id" ></canvas> <!--style="display: none;"-->
-        <button id="capture_button_id">Capture Photo</button>
-        <button id="detect_button_id">Detect!</button>
-        <video id="camera_preview_id" autoplay></video>
-        
+
+        <div class="container">
+            <canvas id="photo_canvas_id" ></canvas> <!--style="display: none;"-->
+            <!--<button id="capture_button_id">Capture Photo</button>-->
+
+            
+            <video id="camera_preview_id" autoplay></video>
+        </div>
         
 
         <br>
