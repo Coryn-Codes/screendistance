@@ -29,7 +29,42 @@ const video = document.getElementById('camera_preview_id');
 const captureButton = document.getElementById('capture_button_id');
 const instructionH1 = document.getElementById('mode_header_id');
 const verdictH1 = document.getElementById('verdict_header_id');
+const placeholder = document.getElementById('placeholder_div_id');
 
+
+window.addEventListener('scroll', function () {
+    const button = document.querySelector('.button-10');
+    const buttonRect = button.getBoundingClientRect();
+    const headers = document.querySelectorAll('h1');
+    let totalHeaderHeight = 0;
+
+    // Calculate the total height of visible headers
+    headers.forEach(header => {
+        if (header.offsetParent !== null) { // Check if the header is visible
+            totalHeaderHeight += header.offsetHeight;
+        }
+    });
+
+    // Check if the button is about to be scrolled off screen
+    const scrollPosition = window.scrollY || window.pageYOffset;
+    console.log("buttonrect", buttonRect.top);
+    console.log("total header height", totalHeaderHeight);
+    console.log("scroll pos", scrollPosition)
+    
+    if (scrollPosition > totalHeaderHeight) {
+        button.classList.add('fixed');
+        placeholder.style.height = `${button.offsetHeight}px`
+        console.log("add fixed")
+    } else {
+        button.classList.remove('fixed');
+        placeholder.style.height = '0';
+        console.log("remove fixed")
+    }
+    console.log("\n\n")
+});
+
+// Initial call to set the correct position on page load
+window.dispatchEvent(new Event('scroll'));
 
 navigator.mediaDevices.getUserMedia({video: true})
     .then( (MediaStream) =>{
@@ -91,15 +126,12 @@ function capture(){
     canvas.height = video.videoHeight;
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     const photoDataUrl = canvas.toDataURL('image/png');
-    h1.innerHTML = 'captured something 1';
     faceImage.src = photoDataUrl;
 };
 
 async function handleDetectClick(event){
     console.log('handleDetectClick triggered');
-    //console.log(event)
-    h1.innerHTML = 'capture.js: detect button is pressed';
-    //let detections = -1;
+
     try{
         const detections = faceDetector.detect(faceImage);
         console.log(detections);

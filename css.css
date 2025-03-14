@@ -24,24 +24,50 @@
     flex-direction: column;
     align-items: center;
     padding: 6px 14px;
-    margin: 20px;
+    /*margin: 20px;*/
     font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
     border-radius: 6px;
     border: none;
   
     color: #fff;
     background: linear-gradient(180deg, #3a75cc 0%, #2d5eb9 100%);
-     background-origin: border-box;
+    background-origin: border-box;
     box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    font-size: 16px; /* Increased font size */
+    cursor: pointer; /* Add pointer cursor for better UX */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+    position: relative; /* Make the button float */
+    top: 20px; /* Position from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 1000; /* Ensure it stays on top of other content */
   }
-  
+
+  .button-10.fixed {
+    position: fixed;
+    top: 20px; /* Position from the top when fixed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    margin: 10; /* Remove margin when fixed */
+}
+
+  .button-10:hover {
+    transform: translateX(-50%) scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0px 2px 4px rgba(54, 122, 246, 0.3); /* Enhanced shadow on hover */
+}
   .button-10:focus {
-    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 2px rgba(58, 108, 217, 0.5);
     outline: 0;
   }
+
+  .button-placeholder {
+    height: 0; /* Initially no height */
+    transition: height 0.2s ease; /* Smooth transition */
+}
+
 #mode_header_id {
     background: linear-gradient(to right, #5170aa, #2a5298); /* Blue gradient */
     color: white; /* Text color */
@@ -51,7 +77,7 @@
     font-size: 24px; /* Font size */
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-    display: inline-block; /* Adjust width to content */
+    display: block; /* Adjust width to content */
     margin: 20px; /* Margin around the box */
 }
 
@@ -74,19 +100,19 @@ canvas, video {
 }
 
 .verdict-red {
-    margin: 10px;
+    margin: 20px;
     background-color: #ffcccc; /* Pale red */
     color: #cc0000; /* Darker red text */
 }
 
 .verdict-green {
-    margin: 10px;
+    margin: 20px;
     background-color: #ccffcc; /* Pale green */
     color: #006600; /* Darker green text */
 }
 
 .verdict-grey {
-    margin: 10px;
+    margin: 20px;
     background-color: #f0f0f0; /* Light grey */
     color: #999999; /* Light grey text */
     font-style: italic; /* Italic placeholder text */
